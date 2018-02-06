@@ -1,0 +1,124 @@
+// 返回上一页按钮
+.detail-prev {
+    height: 5vh;
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+    .btnBack {
+    display: inline-block;
+    margin-top: 1%;
+    margin-left: 3vw;
+    width: 20px;
+    height: 22px;
+    background: url(../../../assets/img/direction.png) no-repeat -44px -8px;
+    }
+}
+.bg-logo {
+    height: 30vh;
+    width: 100vw;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+.header-coubuy {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 30vh;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+    background: rgba(7, 17, 27, 0.2);
+}
+.detail-title {
+    img {
+        position:absolute;
+        top: 10%;
+        left: 40%;
+        margin: 1vh auto;
+        width: 20vw;
+        height: 10vh;
+    }
+    .detailed {
+        position: absolute;
+        top: 22%;
+        left: 38%;
+        color:#fff;
+        font-size: .5rem;
+        font-weight: 500;
+    }
+    .detail-order {
+        position: absolute;
+        top: 26%;
+        left: 20%;
+        color:#fff;
+        font-size: .3rem;
+    }
+    .detail-amount {
+        position: absolute;
+        top: 30%;
+        left: 35%;
+        color:#fff;
+        font-size: .4rem;
+    }
+}
+.detail {
+    width: 100vw;
+    background:#fff;
+    .detail-order-info {
+        margin-left: 5vw;
+        padding: 1vh 0;
+        width: 90vw;
+        height: 4vh;
+        line-height: 4vh;
+        font-size: .35rem;
+        color: #4D4D4D;
+        border-bottom: 1px solid #ccc;
+        box-shadow: 0 3px 0 #EBEBEB;
+    }
+    .detail-num p {
+        display:-webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -moz-box-pack: space-between;
+        -webkit--moz-box-pack: space-between;
+        margin-left: 5vw;
+        padding: .7vh 0;
+        width: 90vw;
+        height: 4vh;
+        line-height: 4vh;
+        font-size: .35667rem;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        .detail-time {
+            color:#FF5339;
+        }
+    }
+    .detail-money {
+        margin-left: 5vw;
+        width: 90vw;
+        height: 6vh;
+        line-height: 6vh;
+        text-align: right;
+        font-size:.4667rem;
+        color:#FF5339;
+        border-top: 1px solid #ccc;
+        box-shadow: 0 -3px 0 #EBEBEB;
+    }
+}
+.gray-font{
+    color: #6E6E6E;
+}
+.hotel-end{
+    padding:2vh 0 9vh 0;
+    text-align:center;
+    font-size:.22667rem;
+    color:#3A8AE9;
+}

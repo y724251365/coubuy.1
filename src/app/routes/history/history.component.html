@@ -1,0 +1,30 @@
+<!-- main  update 2018-02-01-->
+<div class="main-content">
+    <div class="header-coubuy">
+      <div class="bg-logo" style="background-image: url('../../../assets/img/logo_bg.jpeg')"></div>
+    </div>
+    <img src="../../../assets/img/coubuy_logo.png" class="sm-logo" alt="图片加载中">
+    <p class="history-order-title">历史订单</p>
+    <div *ngIf="historyProduct" class="history-content">
+        <div class="history-list" *ngFor="let his of historyProduct;">
+          <div [routerLink]="['/historyDetail', his.ordernum]">
+            <img src={{his.logo}}  class="his-pic" alt="Loading...">
+            <span class="his-name">
+              {{his.name}}
+            </span>
+            <span class="his-amount">￥ {{his.amount}}</span>
+            <span class="his-time">创建时间：{{his.create_time}}</span>
+            <span class="his-direction"></span>
+          </div>
+        </div>
+        <p *ngIf="isOrderBottom" class="is-order-bottom">
+          没有更多订单可以加载了
+        </p>
+    </div>
+    <div *ngIf="!historyProduct" class="no-history">
+      <div class="img-float">
+        <img src="../../../assets/img/shopping-car.png" alt="">
+      </div>
+      <p>暂时没有历史订单信息</p>
+    </div>
+</div>

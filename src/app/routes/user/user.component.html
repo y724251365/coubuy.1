@@ -1,0 +1,108 @@
+<!-- 2018-02-02 -->
+<div class="user-component">
+  <div class="update-information">
+    <img src="../../../assets/img/user-pic.png" class="user-logo" alt="图片加载中">
+    <button class="update-info" (click)="isFormHidden()">
+      <span class="update-info-one">修改个人信息</span>
+      <span class="update-info-two">&nbsp;</span>
+    </button>
+  </div>
+  <div class="user-info" *ngIf="user">
+      <div class="bg-logo" style="background-image: url('../../../assets/img/logo_bg.jpeg')"></div>
+      <div class="header-coubuy">
+        <img src="../../../assets/img/coubuy.png" alt="图片加载中">
+      </div>
+    <p class="styl-box"></p>
+    <div class="important-box">
+        <p>
+            <span class="userpic">用户头像</span>
+            <img  class="userpic-content" src="../../../assets/img/counect_1.jpg" alt="图片加载中">
+        </p>
+        <p class="user-height">
+            <span class="username">用户姓名</span>
+            <span class="username-content">{{user.name}}</span>
+        </p>
+        <p  class="user-height">
+          <span class="userid">用户编号</span>
+          <span class="userid-content">{{user.id}}</span>
+        </p>
+        <p  class="user-height">
+          <span class="usergender">用户性别</span>
+          <span class="usergender-content">{{user.gender == 0?'男':'女'}}</span>
+        </p>
+        <p  class="user-height">
+          <span class="usertel">联系电话</span>
+          <span class="usertel-content">{{user.tel}}</span>
+        </p>
+    </div>
+    <!-- 登录方式 -->
+    <div class="client-title">已支持登录方式</div>
+    <div class="client-box">
+      <p>
+        <img src="../../../assets/img/clients/01.png" alt="图片加载中">
+      </p>
+      <p>
+        <img src="../../../assets/img/clients/02.png" alt="图片加载中">
+      </p>
+      <p>
+        <span class="look-forward">敬请期待</span>
+      </p>
+    </div>
+    <div class="clientting">
+      <span>本次登录方式</span>
+      <span>{{user.client == 1? '微信':'支付宝'}}</span>
+    </div>
+    <div class="usercreate-time">
+      <p>
+        <span>创建时间</span>
+        <span>{{user.create_time}}</span>
+      </p>
+      <p>
+        <span>更新时间</span>
+        <span>{{user.update_time}}</span>
+      </p>
+    </div>
+    <div class="page-bottom">==========================================</div>
+  </div>
+
+      <!-- 更新 用户信息 -->
+    <!-- 未改完 -->
+  <div class="wrapper" [style.display]="isFormOpen? 'block': 'none'" [class.wrapper-add]="isFormOpen">
+    <div class="form-title">
+      <span class="form-title-back" (click)="isCloseWindow()"></span>
+    </div>
+    <div class="form-logo">
+      <img src="../../../assets/img/coubuy.png" alt="图片加载中">
+    </div>
+    <form [formGroup]="validateForm" #formDir="ngForm" (ngSubmit)="upload()">
+      <label class="input-style">
+        <span class="input-title">用户名称</span>
+        <input  type="text" id="userName"
+              formControlName="userName" required maxlength="20" [(ngModel)]="formsVail.userName">
+      </label>
+      <span *ngIf="userName.invalid&&(userName.dirty || userName.touched)">
+        <span *ngIf="userName.errors.required" class="vali-errors">*请输入20位字符以内</span>
+    </span>
+      <br>
+      <label class="input-style">
+        <span class="input-title">联系方式</span>
+        <input type="tel" id="userTel" formControlName="userTel"
+              maxlength="11" minlength="8" required [(ngModel)]="formsVail.userTel">
+        <br>
+      </label>
+      <span *ngIf="userTel.invalid&&(userTel.dirty || userTel.touched)">
+        <span *ngIf="userTel.errors.required" class="vali-errors">请输入8-11位有效号码</span>
+      </span>
+      <br>
+      <label class="user-gender">
+        <span style="color: #999">用户性别</span>
+        <input type="radio" name="userSex" id="userSex" formControlName="userSex"
+              value="0" [checked]="true" [(ngModel)]="formsVail.userSex">&nbsp;男
+        <input type="radio" name="userSex" formControlName="userSex"
+              value="1" [(ngModel)]="formsVail.userSex">&nbsp;女
+      </label>
+      <button class="form-btn" [disabled]="validateForm.invalid">更新信息</button>
+    </form>
+  </div>
+</div>
+

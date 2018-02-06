@@ -1,0 +1,29 @@
+<div class="header-coubuy">
+  <div class="bg-logo" style="background-image: url('../../../assets/img/logo_bg.jpeg')"></div>
+  <div class="logo">
+    <img src="{{hotel.logo}}"/>
+  </div>
+  <div class="hotel">
+    <h3>{{hotel.name}}</h3>
+    <span class="room">房间: {{room.room}}</span>
+    <span class="room">SN: {{machine.sn}}</span>
+  </div>
+</div>
+<div class="coubuy">
+  <div class="card">
+    <div class="d3serve-title">酒店服务</div>
+    <ul class="d3serve">
+      <li class="list">
+        <div class="list-item" *ngFor="let i of links">
+          <a href="{{i.url}}-{{machine.appid}}">
+            <img src="assets/img/serve/{{i.type}}.png"/>
+            <p>{{i.title}}</p>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="server">
+    <a href="'tel'+{{ hotel.tel}}">{{hotel.tel}}</a>
+  </div>
+</div>

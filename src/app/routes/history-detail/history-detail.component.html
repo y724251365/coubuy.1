@@ -1,0 +1,79 @@
+<!-- 返回上一页 -->
+<div class="detail-prev">
+  <button class="btnBack" (click)="toBackPrev()"></button>
+</div>
+<div class="header-coubuy">
+    <div class="bg-logo" style="background-image: url('../../../assets/img/logo_bg.jpeg')"></div>
+  </div>
+<div class="detail-title">
+  <img src="../../../assets/img/success.png" alt="图片加载中">
+  <p class="detailed">订单已完成</p>
+  <p class="detail-order">感谢您对我们的信任，期待您的下次光临</p>
+  <p class="detail-amount">订单价格：￥{{amount}}</p>
+</div>
+<div class="detail" *ngIf="detailProduct">
+  <!-- 请求回来的详情数据 -->
+  <p class="detail-order-info">订单详细信息</p>
+  <div class="detail-num">
+      <p>
+        订单编号：
+        <span>{{detailProduct.ordernum}}</span>
+      </p>
+      <p>
+        订单ID：
+        <span>{{detailProduct.id}}</span>
+      </p>
+      <p>
+        订单价格：
+        <span> {{amount}}元</span>
+      </p>
+  </div>
+  <p class="detail-money">实付： ￥ {{amount}} 元</p>
+  <p class="detail-order-info">酒店信息详情</p>
+  <div class="detail-num">
+        <p>
+          <span class="gray-font">酒店名称：</span>
+          <span>{{detailProduct.b_name}}</span>
+        </p>
+        <p>
+            <span class="gray-font">酒店地址：</span>
+          <span>{{detailProduct.b_addr}}</span>
+        </p>
+        <p>
+            <span class="gray-font">酒店电话：</span>
+           <span>{{detailProduct.b_tel}}</span>
+          </p>
+        <p>
+            <span class="gray-font">房间编号：</span>
+          <span>{{detailProduct.c_name}}</span>
+        </p>
+        <p>
+            <span class="gray-font">房间编号：</span>
+          <span>{{detailProduct.c_tel}}</span>
+        </p>
+        <p>
+          <span class="gray-font">使用者编号：</span>
+          <span>{{detailProduct.b_userid}}</span>
+        </p>
+  </div>
+  <p class="detail-order-info">订单时间详情</p>
+  <div class="detail-num">
+      <p class="gray-font">
+        <span class="gray-font">创建订单时间：</span>
+        <span class="detail-time">{{detailProduct.create_time | date:'yyyy-MM-dd'}}</span>
+      </p>
+      <p class="gray-font">
+        <span class="gray-font">接受订单时间：</span>
+        <span class="detail-time">{{detailProduct.taken_time | date:'yyyy-MM-dd'}}</span>
+      </p>
+      <p class="gray-font">
+        <span class="gray-font">客户到达时间：</span>
+        <span class="detail-time">{{detailProduct.arrive_time | date:'yyyy-MM-dd'}}</span>
+      </p>
+      <p class="gray-font">
+        <span class="gray-font">完成订单时间：</span>
+        <span class="detail-time">{{detailProduct.finish_time | date:'yyyy-MM-dd'}}</span>
+      </p>
+  </div>
+  <p class="hotel-end">如有疑问，请来电咨询</p>
+</div>

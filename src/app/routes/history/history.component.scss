@@ -1,0 +1,119 @@
+// update 2018-02-01
+@import "../../cui/variable";
+.bg-logo {
+    height: 25vh;
+    width: 100vw;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+  }
+.header-coubuy {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 25vh;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+    background: rgba(7, 17, 27, 0.2);
+}
+.sm-logo{
+    position: absolute;
+    top: 5%;
+    left: 38%;
+    width: 25%;
+    height: 6vh;
+    }
+.history-order-title {
+        position: absolute;
+        top: 12%;
+        left: 41%;
+        text-align: center;
+        font-size: $size-title;
+        font-weight: 600;
+        color: #fff;
+    }
+.history-content {
+    margin-top: .7vh;
+    .history-list {
+        position: relative;
+        width: 100vw;
+        height: 10vh;
+        background: #fff;
+        border-bottom: 1px solid #aaa;
+        .his-pic {
+            position: absolute;
+            top: 10%;
+            left: 3%;
+            width: 15vw;
+            height:8vh;
+        }
+        .his-name {
+            position: absolute;
+            top: 10%;
+            left: 25%;
+            font-size: .38rem;
+            font-weight: 500;
+        }
+        .his-amount {
+            position: absolute;
+            top: 25%;
+            left: 78%;
+            font-size: .3rem;
+            color: #9e9e9e;
+        }
+        .his-time{
+            position: absolute;
+            top: 65%;
+            left: 25%;
+            font-size: .27rem;
+            color: #9e9e9e;
+        }
+        .his-direction {
+            position: absolute;
+            top: 30%;
+            left: 93%;
+            width: 20px;
+            height: 22px;
+            background: url(../../../assets/img/direction.png) no-repeat -8px -8px;
+        }
+    }
+}
+.is-order-bottom {
+    margin: 4vh 0 10vh 0; 
+    text-align: center;
+    font-size: .36667rem; 
+    color: #495057;
+}
+// 如果没有数据
+.no-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    width: 100vw;
+    height: 30vh;
+    .img-float {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: rgba(7, 17, 27, 0.1);
+        border-radius: 50%;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+    }
+    p {
+        margin-top:3vh;
+        color: #333;
+    }
+}
